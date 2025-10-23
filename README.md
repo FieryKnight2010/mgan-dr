@@ -16,14 +16,6 @@ MGAN-DR is a multi-modal deep learning approach for drug repurposing that combin
 - **Hierarchical Learning**: Multi-level feature extraction
 - **Class Imbalance Handling**: Focal loss and weighted sampling for rare positive samples
 
-### Performance
-
-| Metric | Score |
-|--------|-------|
-| AUROC | 0.628 |
-| AUPRC | 0.157 |
-| P@10 | 0.30 |
-| P@20 | 0.15 |
 
 **Dataset**: 3,000 drug profiles, 978 genes, 29 unique AEDs (11:1 class imbalance)
 
@@ -285,25 +277,7 @@ We use **StandardScaler** (z-score normalization) per gene:
 
 ---
 
-## 📈 Results and Benchmarks
 
-### Performance on Test Set
-
-| Metric | MGAN-DR | Random Forest | Connectivity Map | Tau Scoring |
-|--------|---------|---------------|------------------|-------------|
-| **AUROC** | **0.628** | 0.540 | 0.527 | 0.505 |
-| **AUPRC** | **0.157** | 0.108 | 0.100 | 0.096 |
-| **P@10** | 0.30 | 0.10 | 0.00 | 0.10 |
-| **P@20** | 0.15 | 0.15 | 0.05 | 0.10 |
-| **R@100** | 0.162 | 0.101 | 0.081 | 0.081 |
-
-### Training Time
-
-- **Hardware**: CPU (Apple M1) or GPU (NVIDIA RTX 3080)
-- **Training time**: ~3 minutes (100 epochs with early stopping)
-- **Inference time**: <1 second for 1024 samples
-
----
 
 ## 🔧 Configuration
 
@@ -394,7 +368,7 @@ If you use this code in your research, please cite:
   title={MGAN-DR: Multi-Modal Graph Attention Networks for Drug Repurposing in Epilepsy},
   author={Kondadadi, Ravi and [Co-authors]},
   journal={AMIA Annual Symposium},
-  year={2024}
+  year={2025}
 }
 ```
 
@@ -406,25 +380,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 🤝 Contributing
-
-Contributions are welcome! Please:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
----
-
-## 📞 Contact
-
-**Ravi Kondadadi**
-- Email: [your-email@domain.com]
-- GitHub: [@your-username]
-
----
 
 ## 🙏 Acknowledgments
 
@@ -448,25 +403,6 @@ Contributions are welcome! Please:
 
 The original dataset contains proprietary drug profiles. We provide data generation scripts to create simulated data with similar characteristics. If you have access to the real data, contact the authors.
 
-### Reproducibility
-
-To ensure reproducibility:
-1. Use the exact same random seed (2024)
-2. Use the provided data generation script
-3. Use the same train/test split
-4. Use the same hyperparameters
-
-### Performance Variations
-
-Performance may vary slightly (~±2%) due to:
-- Hardware differences (CPU vs GPU)
-- PyTorch version
-- Random initialization
-- Operating system
-
-We provide cross-validation results showing mean ± std across 5 folds.
-
----
 
 **Last Updated**: October 2024
 **Version**: 1.0.0
